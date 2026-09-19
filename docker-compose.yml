@@ -1,0 +1,97 @@
+services:
+  # --- Microservicios básicos ---
+  users:
+    build: ./Users/UserService
+    ports:
+      - "5001:80"
+
+  products:
+    build: ./Products/ProductService
+    ports:
+      - "5002:80"
+
+  orders:
+    build: ./Orders/OrderService
+    ports:
+      - "5003:80"
+
+  payments:
+    build: ./Payments/PaymentService
+    ports:
+      - "5004:80"
+
+  inventory:
+    build: ./Inventory/InventoryService
+    ports:
+      - "5005:80"
+
+  shipping:
+    build: ./Shipping/ShippingService
+    ports:
+      - "5006:80"
+
+  cart:
+    build: ./Cart/CartService
+    ports:
+      - "5007:80"
+
+  reviews:
+    build: ./Reviewers/ReviewersService  
+    ports:
+      - "5008:80"
+
+  auth:
+    build: ./Auth/AuthService
+    ports:
+      - "5009:80"
+
+  notifications:
+    build: ./Notification/NotificationService
+    ports:
+      - "5010:80"
+
+  analytics:
+    build: ./Analytics/AnalyticService
+    ports:
+      - "5011:80"
+
+  support:
+    build: ./Support/SupportService
+    ports:
+      - "5012:80"
+
+  # --- OpenTelemetry Collector ---
+  otel-collector:
+    image: otel/opentelemetry-collector:latest
+    command: ["--config=/etc/otel-collector-config.yaml"]
+    volumes:
+      - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
+    ports:
+      - "4317:4317"   # gRPC
+      - "4318:4318"   # HTTP
+
+  # --- Jaeger ---
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    ports:
+      - "16686:16686"   # UI
+      - "14250:14250"   # gRPC
+
+  # --- Prometheus ---
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./etc/prometheus:/etc/prometheus
+    ports:
+      - "9090:9090"
+  # --- Grafana ---
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./etc/grafana:/etc/grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+

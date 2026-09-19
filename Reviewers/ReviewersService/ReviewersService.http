@@ -1,0 +1,6 @@
+@ReviewersService_HostAddress = http://localhost:5146
+
+GET {{ReviewersService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

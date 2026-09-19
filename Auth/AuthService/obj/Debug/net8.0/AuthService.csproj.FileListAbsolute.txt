@@ -1,0 +1,7 @@
+C:\Maestria\Herramientas Observabilidad\Telemetry\ecommerce-telemetry-demo\Auth\AuthService\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Maestria\Herramientas Observabilidad\Telemetry\ecommerce-telemetry-demo\Auth\AuthService\obj\Debug\net8.0\AuthService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Maestria\Herramientas Observabilidad\Telemetry\ecommerce-telemetry-demo\Auth\AuthService\obj\Debug\net8.0\AuthService.AssemblyInfoInputs.cache
+C:\Maestria\Herramientas Observabilidad\Telemetry\ecommerce-telemetry-demo\Auth\AuthService\obj\Debug\net8.0\AuthService.AssemblyInfo.cs
+C:\Maestria\Herramientas Observabilidad\Telemetry\ecommerce-telemetry-demo\Auth\AuthService\obj\Debug\net8.0\AuthService.csproj.CoreCompileInputs.cache
+C:\Maestria\Herramientas Observabilidad\Telemetry\ecommerce-telemetry-demo\Auth\AuthService\obj\Debug\net8.0\AuthService.MvcApplicationPartsAssemblyInfo.cache
+C:\Maestria\Herramientas Observabilidad\Telemetry\ecommerce-telemetry-demo\Auth\AuthService\obj\Debug\net8.0\AuthService.sourcelink.json

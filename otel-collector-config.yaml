@@ -1,0 +1,35 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+      http:
+
+processors:
+  batch:
+  memory_limiter:
+    limit_mib: 512
+    spike_limit_mib: 128
+    check_interval: 5s
+  probabilistic_sampler:
+    sampling_percentage: 10
+
+exporters:
+  googlecloud:
+    project: my-gcp-project
+  awscloudwatch:
+    region: us-east-1
+  jaeger:
+    endpoint: jaeger:14250
+    tls:
+      insecure: true
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch, probabilistic_sampler]
+      exporters: [googlecloud, awscloudwatch, jaeger]
+    metrics:
+      receivers: [otlp]
+      processors: [batch, memory_limiter]
+      exporters: [googlecloud, awscloudwatch]
