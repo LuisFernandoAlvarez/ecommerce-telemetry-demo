@@ -4,6 +4,9 @@ using OpenTelemetry.Trace;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+
 // Configuración de OpenTelemetry
 builder.Services.AddSingleton<TracerProvider>(_ =>
     Sdk.CreateTracerProviderBuilder()

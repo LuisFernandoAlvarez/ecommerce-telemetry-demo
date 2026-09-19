@@ -1,0 +1,23 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Microservices Metrics",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Requests per second",
+        "targets": [
+          { "expr": "rate(http_server_requests_seconds_count[1m])" }
+        ]
+      },
+      {
+        "type": "graph",
+        "title": "CPU Usage",
+        "targets": [
+          { "expr": "process_cpu_seconds_total" }
+        ]
+      }
+    ]
+  },
+  "overwrite": true
+}
