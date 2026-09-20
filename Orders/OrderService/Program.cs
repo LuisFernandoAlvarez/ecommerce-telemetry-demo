@@ -1,6 +1,7 @@
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
+using Prometheus;   
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +34,10 @@ builder.Services.AddEndpointsApiExplorer();
 var app = builder.Build();
 
 app.UseHttpsRedirection();
+app.UseRouting();
+app.UseHttpMetrics();   // mide requests HTTP
+app.MapMetrics();       // expone /metrics
+
 
 // Endpoint GET de simulación
 app.MapGet("/ping", () =>

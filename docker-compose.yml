@@ -1,75 +1,107 @@
+volumes:
+  grafana-storage:
+
+networks:
+  observability:
+
 services:
   # --- Microservicios básicos ---
   users:
     build: ./Users/UserService
     ports:
       - "5001:80"
+    networks:
+      - observability
 
   products:
     build: ./Products/ProductService
     ports:
       - "5002:80"
+    networks:
+      - observability
 
   orders:
     build: ./Orders/OrderService
     ports:
       - "5003:80"
+    networks:
+      - observability
 
   payments:
     build: ./Payments/PaymentService
     ports:
       - "5004:80"
+    networks:
+      - observability
 
   inventory:
     build: ./Inventory/InventoryService
     ports:
       - "5005:80"
+    networks:
+      - observability
 
   shipping:
     build: ./Shipping/ShippingService
     ports:
       - "5006:80"
+    networks:
+      - observability
 
   cart:
     build: ./Cart/CartService
     ports:
       - "5007:80"
+    networks:
+      - observability
 
   reviews:
     build: ./Reviewers/ReviewersService  
     ports:
       - "5008:80"
+    networks:
+      - observability
 
   auth:
     build: ./Auth/AuthService
     ports:
       - "5009:80"
+    networks:
+      - observability
 
   notifications:
     build: ./Notification/NotificationService
     ports:
       - "5010:80"
+    networks:
+      - observability
 
   analytics:
     build: ./Analytics/AnalyticService
     ports:
       - "5011:80"
+    networks:
+      - observability
 
   support:
     build: ./Support/SupportService
     ports:
       - "5012:80"
+    networks:
+      - observability
 
   # --- OpenTelemetry Collector ---
   otel-collector:
     image: otel/opentelemetry-collector:latest
-    command: ["--config=/etc/otel-collector-config.yaml"]
+    command: ["--config=/etc/otel-collector-config.yml"]
     volumes:
-      - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
+      - ./otel-collector-config.yml:/etc/otel-collector-config.yml:ro
     ports:
       - "4317:4317"   # gRPC
       - "4318:4318"   # HTTP
       - "9464:9464"   # Prometheus metrics endpoint
+    networks:
+      - observability
 
   # --- Jaeger ---
   jaeger:
@@ -77,14 +109,18 @@ services:
     ports:
       - "16686:16686"   # UI
       - "14250:14250"   # gRPC
+    networks:
+      - observability
 
   # --- Prometheus ---
   prometheus:
-    image: prom/prometheus
+    image: prom/prometheus:latest
     volumes:
-      - ./etc/prometheus:/etc/prometheus
+      - ./etc/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
     ports:
       - "9090:9090"
+    networks:
+      - observability
 
   # --- Grafana ---
   grafana:
@@ -92,7 +128,11 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./etc/grafana:/var/lib/grafana
+      - grafana-storage:/var/lib/grafana
     environment:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
+    depends_on:
+      - prometheus
+    networks:
+      - observability
