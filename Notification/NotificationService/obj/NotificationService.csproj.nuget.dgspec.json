@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Notification\\NotificationService\\NotificationService.csproj": {}
+    "C:\\ecommerce-telemetry-demo\\Notification\\NotificationService\\NotificationService.csproj": {}
   },
   "projects": {
-    "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Notification\\NotificationService\\NotificationService.csproj": {
+    "C:\\ecommerce-telemetry-demo\\Notification\\NotificationService\\NotificationService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Notification\\NotificationService\\NotificationService.csproj",
+        "projectUniqueName": "C:\\ecommerce-telemetry-demo\\Notification\\NotificationService\\NotificationService.csproj",
         "projectName": "NotificationService",
-        "projectPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Notification\\NotificationService\\NotificationService.csproj",
+        "projectPath": "C:\\ecommerce-telemetry-demo\\Notification\\NotificationService\\NotificationService.csproj",
         "packagesPath": "C:\\Users\\Luis Fernando\\.nuget\\packages\\",
-        "outputPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Notification\\NotificationService\\obj\\",
+        "outputPath": "C:\\ecommerce-telemetry-demo\\Notification\\NotificationService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Luis Fernando\\AppData\\Roaming\\NuGet\\NuGet.Config"

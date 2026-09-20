@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Inventory\\InventoryService\\InventoryService.csproj": {}
+    "C:\\ecommerce-telemetry-demo\\Inventory\\InventoryService\\InventoryService.csproj": {}
   },
   "projects": {
-    "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Inventory\\InventoryService\\InventoryService.csproj": {
+    "C:\\ecommerce-telemetry-demo\\Inventory\\InventoryService\\InventoryService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Inventory\\InventoryService\\InventoryService.csproj",
+        "projectUniqueName": "C:\\ecommerce-telemetry-demo\\Inventory\\InventoryService\\InventoryService.csproj",
         "projectName": "InventoryService",
-        "projectPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Inventory\\InventoryService\\InventoryService.csproj",
+        "projectPath": "C:\\ecommerce-telemetry-demo\\Inventory\\InventoryService\\InventoryService.csproj",
         "packagesPath": "C:\\Users\\Luis Fernando\\.nuget\\packages\\",
-        "outputPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Inventory\\InventoryService\\obj\\",
+        "outputPath": "C:\\ecommerce-telemetry-demo\\Inventory\\InventoryService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Luis Fernando\\AppData\\Roaming\\NuGet\\NuGet.Config"

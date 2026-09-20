@@ -1775,11 +1775,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Cart\\CartService\\CartService.csproj",
+      "projectUniqueName": "C:\\ecommerce-telemetry-demo\\Cart\\CartService\\CartService.csproj",
       "projectName": "CartService",
-      "projectPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Cart\\CartService\\CartService.csproj",
+      "projectPath": "C:\\ecommerce-telemetry-demo\\Cart\\CartService\\CartService.csproj",
       "packagesPath": "C:\\Users\\Luis Fernando\\.nuget\\packages\\",
-      "outputPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Cart\\CartService\\obj\\",
+      "outputPath": "C:\\ecommerce-telemetry-demo\\Cart\\CartService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Luis Fernando\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Users\\UserService\\UserService.csproj": {}
+    "C:\\ecommerce-telemetry-demo\\Users\\UserService\\UserService.csproj": {}
   },
   "projects": {
-    "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Users\\UserService\\UserService.csproj": {
+    "C:\\ecommerce-telemetry-demo\\Users\\UserService\\UserService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Users\\UserService\\UserService.csproj",
+        "projectUniqueName": "C:\\ecommerce-telemetry-demo\\Users\\UserService\\UserService.csproj",
         "projectName": "UserService",
-        "projectPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Users\\UserService\\UserService.csproj",
+        "projectPath": "C:\\ecommerce-telemetry-demo\\Users\\UserService\\UserService.csproj",
         "packagesPath": "C:\\Users\\Luis Fernando\\.nuget\\packages\\",
-        "outputPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Users\\UserService\\obj\\",
+        "outputPath": "C:\\ecommerce-telemetry-demo\\Users\\UserService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Luis Fernando\\AppData\\Roaming\\NuGet\\NuGet.Config"

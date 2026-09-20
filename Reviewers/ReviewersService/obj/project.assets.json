@@ -1775,11 +1775,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Reviewers\\ReviewersService\\ReviewersService.csproj",
+      "projectUniqueName": "C:\\ecommerce-telemetry-demo\\Reviewers\\ReviewersService\\ReviewersService.csproj",
       "projectName": "ReviewersService",
-      "projectPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Reviewers\\ReviewersService\\ReviewersService.csproj",
+      "projectPath": "C:\\ecommerce-telemetry-demo\\Reviewers\\ReviewersService\\ReviewersService.csproj",
       "packagesPath": "C:\\Users\\Luis Fernando\\.nuget\\packages\\",
-      "outputPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Reviewers\\ReviewersService\\obj\\",
+      "outputPath": "C:\\ecommerce-telemetry-demo\\Reviewers\\ReviewersService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Luis Fernando\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1775,11 +1775,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Products\\ProductService\\Products.csproj",
+      "projectUniqueName": "C:\\ecommerce-telemetry-demo\\Products\\ProductService\\Products.csproj",
       "projectName": "Products",
-      "projectPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Products\\ProductService\\Products.csproj",
+      "projectPath": "C:\\ecommerce-telemetry-demo\\Products\\ProductService\\Products.csproj",
       "packagesPath": "C:\\Users\\Luis Fernando\\.nuget\\packages\\",
-      "outputPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Products\\ProductService\\obj\\",
+      "outputPath": "C:\\ecommerce-telemetry-demo\\Products\\ProductService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Luis Fernando\\AppData\\Roaming\\NuGet\\NuGet.Config"
