@@ -1,9 +1,8 @@
-
 apiVersion: v1
 kind: Service
 metadata:
   name: analytics-service
-  labels:
+  namespace: monitoring  
     app: analytics
     release: kube-prometheus
 spec:
@@ -12,4 +11,4 @@ spec:
   ports:
     - name: http-metrics
       port: 8080        # Puerto expuesto dentro del cluster
-      targetPort: 5126  # Puerto real del contenedor
+      targetPort: 8080  # Puerto real del contenedor
