@@ -5,48 +5,48 @@ global:
 scrape_configs:
   - job_name: 'users'
     static_configs:
-      - targets: ['users:5091']
+      - targets: ['users-service:8080']
 
   - job_name: 'products'
     static_configs:
-      - targets: ['products:5257']
+      - targets: ['products-service:8080']
 
   - job_name: 'orders'
     static_configs:
-      - targets: ['orders:5059']
+      - targets: ['orders-service:8080']
 
   - job_name: 'payments'
     static_configs:
-      - targets: ['payments:5195']
+      - targets: ['payments-service:8080']
 
   - job_name: 'inventory'
     static_configs:
-      - targets: ['inventory:5138']
+      - targets: ['inventory-service:8080']
 
   - job_name: 'shipping'
     static_configs:
-      - targets: ['shipping:5134']
+      - targets: ['shipping-service:8080']
 
   - job_name: 'cart'
     static_configs:
-      - targets: ['cart:5151']
+      - targets: ['cart-service:8080']
 
   - job_name: 'reviews'
     static_configs:
-      - targets: ['reviews:5146']
+      - targets: ['reviews-service:8080']
 
   - job_name: 'auth'
     static_configs:
-      - targets: ['auth:5292']
+      - targets: ['auth-service:8080']
 
   - job_name: 'notifications'
     static_configs:
-      - targets: ['notifications:5221']
+      - targets: ['notifications-service:8080']
 
   - job_name: 'analytics'
     static_configs:
-      - targets: ['analytics:5126']
+      - targets: ['analytics-service:8080']
 
   - job_name: 'support'
     static_configs:
-      - targets: ['support:5185']
+      - targets: ['support-service:8080']

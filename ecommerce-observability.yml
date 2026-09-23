@@ -186,7 +186,7 @@ spec:
     spec:
       containers:
       - name: users
-        image: <usuario>/users:1.0
+        image: lfal328/users:1.0
         ports:
         - containerPort: 5091
 ---
@@ -218,7 +218,7 @@ spec:
     spec:
       containers:
       - name: products
-        image: <usuario>/products:1.0
+        image: lfal328/products:1.0
         ports:
         - containerPort: 5257
 ---
@@ -250,7 +250,7 @@ spec:
     spec:
       containers:
       - name: orders
-        image: <usuario>/orders:1.0
+        image: lfal328/orders:1.0
         ports:
         - containerPort: 5059
 ---
@@ -282,7 +282,7 @@ spec:
     spec:
       containers:
       - name: payments
-        image: <usuario>/payments:1.0
+        image: lfal328/payments:1.0
         ports:
         - containerPort: 5195
 ---
@@ -314,7 +314,7 @@ spec:
     spec:
       containers:
       - name: inventory
-        image: <usuario>/inventory:1.0
+        image: lfal328/inventory:1.0
         ports:
         - containerPort: 5138
 ---
@@ -346,7 +346,7 @@ spec:
     spec:
       containers:
       - name: shipping
-        image: <usuario>/shipping:1.0
+        image: lfal328/shipping:1.0
         ports:
         - containerPort: 5134
 ---
@@ -378,7 +378,7 @@ spec:
     spec:
       containers:
       - name: cart
-        image: <usuario>/cart:1.0
+        image: lfal328/cart:1.0
         ports:
         - containerPort: 5151
 ---
@@ -410,7 +410,7 @@ spec:
     spec:
       containers:
       - name: reviews
-        image: <usuario>/reviews:1.0
+        image: lfal328/reviews:1.0
         ports:
         - containerPort: 5146
 ---
@@ -442,7 +442,7 @@ spec:
     spec:
       containers:
       - name: auth
-        image: <usuario>/auth:1.0
+        image: lfal328/auth:1.0
         ports:
         - containerPort: 5292
 ---
@@ -474,7 +474,7 @@ spec:
     spec:
       containers:
       - name: notifications
-        image: <usuario>/notifications:1.0
+        image: lfal328/notifications:1.0
         ports:
         - containerPort: 5221
 ---
@@ -506,7 +506,7 @@ spec:
     spec:
       containers:
       - name: analytics
-        image: <usuario>/analytics:1.0
+        image: lfal328/analytics:1.0
         ports:
         - containerPort: 5126
 ---
@@ -538,7 +538,7 @@ spec:
     spec:
       containers:
       - name: support
-        image: <usuario>/support:1.0
+        image: lfal328/support:1.0
         ports:
         - containerPort: 5185
 ---
