@@ -1,0 +1,685 @@
+# -------------------------
+# Microservicios
+# -------------------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: users
+  template:
+    metadata:
+      labels:
+        app: users
+    spec:
+      containers:
+      - name: users
+        image: lfal328/users:1.0
+        ports:
+        - containerPort: 5091
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: users-service
+spec:
+  selector:
+    app: users
+  ports:
+    - port: 5091
+      targetPort: 5091
+  type: ClusterIP
+---
+# Repite el mismo patrón para los otros 11 microservicios:
+# products (5257), orders (5059), payments (5195), inventory (5138),
+# shipping (5134), cart (5151), reviews (5146),
+# auth (5292), notifications (5221), analytics (5126), support (5185)
+
+# -------------------------
+# Prometheus
+# -------------------------
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-config
+data:
+  prometheus.yml: |
+    global:
+      scrape_interval: 5s
+    scrape_configs:
+      - job_name: 'users'
+        static_configs:
+          - targets: ['users-service:5091']
+      - job_name: 'products'
+        static_configs:
+          - targets: ['products-service:5257']
+      - job_name: 'orders'
+        static_configs:
+          - targets: ['orders-service:5059']
+      - job_name: 'payments'
+        static_configs:
+          - targets: ['payments-service:5195']
+      - job_name: 'inventory'
+        static_configs:
+          - targets: ['inventory-service:5138']
+      - job_name: 'shipping'
+        static_configs:
+          - targets: ['shipping-service:5134']
+      - job_name: 'cart'
+        static_configs:
+          - targets: ['cart-service:5151']
+      - job_name: 'reviews'
+        static_configs:
+          - targets: ['reviews-service:5146']
+      - job_name: 'auth'
+        static_configs:
+          - targets: ['auth-service:5292']
+      - job_name: 'notifications'
+        static_configs:
+          - targets: ['notifications-service:5221']
+      - job_name: 'analytics'
+        static_configs:
+          - targets: ['analytics-service:5126']
+      - job_name: 'support'
+        static_configs:
+          - targets: ['support-service:5185']
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheus
+  template:
+    metadata:
+      labels:
+        app: prometheus
+    spec:
+      containers:
+      - name: prometheus
+        image: prom/prometheus:latest
+        args:
+          - "--config.file=/etc/prometheus/prometheus.yml"
+        ports:
+        - containerPort: 9090
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/prometheus
+      volumes:
+      - name: config-volume
+        configMap:
+          name: prometheus-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus-service
+spec:
+  selector:
+    app: prometheus
+  ports:
+    - port: 9090
+      targetPort: 9090
+  type: NodePort
+
+# -------------------------
+# Grafana
+# -------------------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      containers:
+      - name: grafana
+        image: grafana/grafana:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: GF_SECURITY_ADMIN_USER
+          value: admin
+        - name: GF_SECURITY_ADMIN_PASSWORD
+          value: admin
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana-service
+spec:
+  selector:
+    app: grafana
+  ports:
+    - port: 3000
+      targetPort: 3000
+  type: NodePort
+# -------------------------
+# Microservicios
+# -------------------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: users
+  template:
+    metadata:
+      labels:
+        app: users
+    spec:
+      containers:
+      - name: users
+        image: <usuario>/users:1.0
+        ports:
+        - containerPort: 5091
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: users-service
+spec:
+  selector:
+    app: users
+  ports:
+    - port: 5091
+      targetPort: 5091
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: products-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: products
+  template:
+    metadata:
+      labels:
+        app: products
+    spec:
+      containers:
+      - name: products
+        image: <usuario>/products:1.0
+        ports:
+        - containerPort: 5257
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: products-service
+spec:
+  selector:
+    app: products
+  ports:
+    - port: 5257
+      targetPort: 5257
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orders-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orders
+  template:
+    metadata:
+      labels:
+        app: orders
+    spec:
+      containers:
+      - name: orders
+        image: <usuario>/orders:1.0
+        ports:
+        - containerPort: 5059
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orders-service
+spec:
+  selector:
+    app: orders
+  ports:
+    - port: 5059
+      targetPort: 5059
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payments-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payments
+  template:
+    metadata:
+      labels:
+        app: payments
+    spec:
+      containers:
+      - name: payments
+        image: <usuario>/payments:1.0
+        ports:
+        - containerPort: 5195
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: payments-service
+spec:
+  selector:
+    app: payments
+  ports:
+    - port: 5195
+      targetPort: 5195
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inventory-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inventory
+  template:
+    metadata:
+      labels:
+        app: inventory
+    spec:
+      containers:
+      - name: inventory
+        image: <usuario>/inventory:1.0
+        ports:
+        - containerPort: 5138
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: inventory-service
+spec:
+  selector:
+    app: inventory
+  ports:
+    - port: 5138
+      targetPort: 5138
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shipping-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shipping
+  template:
+    metadata:
+      labels:
+        app: shipping
+    spec:
+      containers:
+      - name: shipping
+        image: <usuario>/shipping:1.0
+        ports:
+        - containerPort: 5134
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shipping-service
+spec:
+  selector:
+    app: shipping
+  ports:
+    - port: 5134
+      targetPort: 5134
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cart-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cart
+  template:
+    metadata:
+      labels:
+        app: cart
+    spec:
+      containers:
+      - name: cart
+        image: <usuario>/cart:1.0
+        ports:
+        - containerPort: 5151
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cart-service
+spec:
+  selector:
+    app: cart
+  ports:
+    - port: 5151
+      targetPort: 5151
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reviews-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reviews
+  template:
+    metadata:
+      labels:
+        app: reviews
+    spec:
+      containers:
+      - name: reviews
+        image: <usuario>/reviews:1.0
+        ports:
+        - containerPort: 5146
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: reviews-service
+spec:
+  selector:
+    app: reviews
+  ports:
+    - port: 5146
+      targetPort: 5146
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth
+  template:
+    metadata:
+      labels:
+        app: auth
+    spec:
+      containers:
+      - name: auth
+        image: <usuario>/auth:1.0
+        ports:
+        - containerPort: 5292
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-service
+spec:
+  selector:
+    app: auth
+  ports:
+    - port: 5292
+      targetPort: 5292
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notifications-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notifications
+  template:
+    metadata:
+      labels:
+        app: notifications
+    spec:
+      containers:
+      - name: notifications
+        image: <usuario>/notifications:1.0
+        ports:
+        - containerPort: 5221
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: notifications-service
+spec:
+  selector:
+    app: notifications
+  ports:
+    - port: 5221
+      targetPort: 5221
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: analytics-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: analytics
+  template:
+    metadata:
+      labels:
+        app: analytics
+    spec:
+      containers:
+      - name: analytics
+        image: <usuario>/analytics:1.0
+        ports:
+        - containerPort: 5126
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: analytics-service
+spec:
+  selector:
+    app: analytics
+  ports:
+    - port: 5126
+      targetPort: 5126
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: support-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: support
+  template:
+    metadata:
+      labels:
+        app: support
+    spec:
+      containers:
+      - name: support
+        image: <usuario>/support:1.0
+        ports:
+        - containerPort: 5185
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: support-service
+spec:
+  selector:
+    app: support
+  ports:
+    - port: 5185
+      targetPort: 5185
+  type: ClusterIP
+---
+# -------------------------
+# Prometheus
+# -------------------------
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-config
+data:
+  prometheus.yml: |
+    global:
+      scrape_interval: 5s
+    scrape_configs:
+      - job_name: 'users'
+        static_configs:
+          - targets: ['users-service:5091']
+      - job_name: 'products'
+        static_configs:
+          - targets: ['products-service:5257']
+      - job_name: 'orders'
+        static_configs:
+          - targets: ['orders-service:5059']
+      - job_name: 'payments'
+        static_configs:
+          - targets: ['payments-service:5195']
+      - job_name: 'inventory'
+        static_configs:
+          - targets: ['inventory-service:5138']
+      - job_name: 'shipping'
+        static_configs:
+          - targets: ['shipping-service:5134']
+      - job_name: 'cart'
+        static_configs:
+          - targets: ['cart-service:5151']
+      - job_name: 'reviews'
+        static_configs:
+          - targets: ['reviews-service:5146']
+      - job_name: 'auth'
+        static_configs:
+          - targets: ['auth-service:5292']
+      - job_name: 'notifications'
+        static_configs:
+          - targets: ['notifications-service:5221']
+      - job_name: 'analytics'
+        static_configs:
+          - targets: ['analytics-service:5126']
+      - job_name: 'support'
+        static_configs:
+          - targets: ['support-service:5185']
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheus
+  template:
+    metadata:
+      labels:
+        app: prometheus
+    spec:
+      containers:
+      - name: prometheus
+        image: prom/prometheus:latest
+        args:
+          - "--config.file=/etc/prometheus/prometheus.yml"
+        ports:
+        - containerPort: 9090
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/prometheus
+      volumes:
+      - name: config-volume
+        configMap:
+          name: prometheus-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus-service
+spec:
+  selector:
+    app: prometheus
+  ports:
+    - port: 9090
+      targetPort: 9090
+  type: NodePort
+---
+# -------------------------
+# Grafana
+# -------------------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      containers:
+      - name: grafana
+        image: grafana/grafana:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: GF_SECURITY_ADMIN_USER
+          value: admin
+        - name: GF_SECURITY_ADMIN_PASSWORD
+          value: admin
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana-service
+spec:
+  selector:
+    app: grafana
+  ports:
+    - port: 3000
+      targetPort: 3000
+  type: NodePort

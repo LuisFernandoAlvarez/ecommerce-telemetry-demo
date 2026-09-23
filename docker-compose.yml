@@ -9,84 +9,84 @@ services:
   users:
     build: ./Users/UserService
     ports:
-      - "5001:80"
+      - "5091:5091"
     networks:
       - observability
 
   products:
     build: ./Products/ProductService
     ports:
-      - "5002:80"
+      - "5257:5257"
     networks:
       - observability
 
   orders:
     build: ./Orders/OrderService
     ports:
-      - "5003:5059"
+      - "5059:5059"
     networks:
       - observability
 
   payments:
     build: ./Payments/PaymentService
     ports:
-      - "5004:80"
+      - "5195:5195"
     networks:
       - observability
 
   inventory:
     build: ./Inventory/InventoryService
     ports:
-      - "5005:80"
+      - "5138:5138"
     networks:
       - observability
 
   shipping:
     build: ./Shipping/ShippingService
     ports:
-      - "5006:80"
+      - "5134:5134"
     networks:
       - observability
 
   cart:
     build: ./Cart/CartService
     ports:
-      - "5007:80"
+      - "5151:5151"
     networks:
       - observability
 
   reviews:
     build: ./Reviewers/ReviewersService  
     ports:
-      - "5008:80"
+      - "5146:5146"
     networks:
       - observability
 
   auth:
     build: ./Auth/AuthService
     ports:
-      - "5009:80"
+      - "5292:5292"
     networks:
       - observability
 
   notifications:
     build: ./Notification/NotificationService
     ports:
-      - "5010:80"
+      - "5121:5221"
     networks:
       - observability
 
   analytics:
     build: ./Analytics/AnalyticService
     ports:
-      - "5011:80"
+      - "5126:5126"
     networks:
       - observability
 
   support:
     build: ./Support/SupportService
     ports:
-      - "5012:80"
+      - "5185:5185"
     networks:
       - observability
 
