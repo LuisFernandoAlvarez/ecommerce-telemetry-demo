@@ -9,84 +9,84 @@ services:
   users:
     build: ./Users/UserService
     ports:
-      - "5001:80"
+      - "5091:5091"
     networks:
       - observability
 
   products:
     build: ./Products/ProductService
     ports:
-      - "5002:80"
+      - "5257:5257"
     networks:
       - observability
 
   orders:
     build: ./Orders/OrderService
     ports:
-      - "5003:80"
+      - "5059:5059"
     networks:
       - observability
 
   payments:
     build: ./Payments/PaymentService
     ports:
-      - "5004:80"
+      - "5195:5195"
     networks:
       - observability
 
   inventory:
     build: ./Inventory/InventoryService
     ports:
-      - "5005:80"
+      - "5138:5138"
     networks:
       - observability
 
   shipping:
     build: ./Shipping/ShippingService
     ports:
-      - "5006:80"
+      - "5134:5134"
     networks:
       - observability
 
   cart:
     build: ./Cart/CartService
     ports:
-      - "5007:80"
+      - "5151:5151"
     networks:
       - observability
 
   reviews:
     build: ./Reviewers/ReviewersService  
     ports:
-      - "5008:80"
+      - "5146:5146"
     networks:
       - observability
 
   auth:
     build: ./Auth/AuthService
     ports:
-      - "5009:80"
+      - "5292:5292"
     networks:
       - observability
 
   notifications:
     build: ./Notification/NotificationService
     ports:
-      - "5010:80"
+      - "5121:5221"
     networks:
       - observability
 
   analytics:
     build: ./Analytics/AnalyticService
     ports:
-      - "5011:80"
+      - "5126:5126"
     networks:
       - observability
 
   support:
     build: ./Support/SupportService
     ports:
-      - "5012:80"
+      - "5185:5185"
     networks:
       - observability
 
@@ -95,7 +95,11 @@ services:
     image: otel/opentelemetry-collector:latest
     command: --config=/etc/otel-collector-config.yml
     volumes:
+<<<<<<< HEAD
       - ./otel-collector-config.yml:/etc/otel-collector-config.yml:ro
+=======
+      - /c/ecommerce-telemetry-demo/etc/otel-collector-config.yml:/etc/otel-collector-config.yml:ro
+>>>>>>> db59c93e220df67efc09dd6dfca91b25112297b4
     ports:
       - "4317:4317"   # gRPC OTLP
       - "4318:4318"   # HTTP OTLP
@@ -116,7 +120,7 @@ services:
   prometheus:
     image: prom/prometheus:latest
     volumes:
-      - ./etc/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - /c/ecommerce-telemetry-demo/etc/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
     ports:
       - "9090:9090"
     networks:

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: users-service
+  labels:
+    app: users
+    release: kube-prometheus
+spec:
+  selector:
+    app: users
+  ports:
+    - name: http-metrics
+      port: 8080
+      targetPort: 5091

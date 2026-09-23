@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Analytics\\AnalyticService\\AnalyticService.csproj": {}
+    "C:\\ecommerce-telemetry-demo\\Analytics\\AnalyticService\\AnalyticService.csproj": {}
   },
   "projects": {
-    "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Analytics\\AnalyticService\\AnalyticService.csproj": {
+    "C:\\ecommerce-telemetry-demo\\Analytics\\AnalyticService\\AnalyticService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Analytics\\AnalyticService\\AnalyticService.csproj",
+        "projectUniqueName": "C:\\ecommerce-telemetry-demo\\Analytics\\AnalyticService\\AnalyticService.csproj",
         "projectName": "AnalyticService",
-        "projectPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Analytics\\AnalyticService\\AnalyticService.csproj",
+        "projectPath": "C:\\ecommerce-telemetry-demo\\Analytics\\AnalyticService\\AnalyticService.csproj",
         "packagesPath": "C:\\Users\\Luis Fernando\\.nuget\\packages\\",
-        "outputPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Analytics\\AnalyticService\\obj\\",
+        "outputPath": "C:\\ecommerce-telemetry-demo\\Analytics\\AnalyticService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Luis Fernando\\AppData\\Roaming\\NuGet\\NuGet.Config"

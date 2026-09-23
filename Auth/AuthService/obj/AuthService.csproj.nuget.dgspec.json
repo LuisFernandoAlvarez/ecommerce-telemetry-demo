@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Auth\\AuthService\\AuthService.csproj": {}
+    "C:\\ecommerce-telemetry-demo\\Auth\\AuthService\\AuthService.csproj": {}
   },
   "projects": {
-    "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Auth\\AuthService\\AuthService.csproj": {
+    "C:\\ecommerce-telemetry-demo\\Auth\\AuthService\\AuthService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Auth\\AuthService\\AuthService.csproj",
+        "projectUniqueName": "C:\\ecommerce-telemetry-demo\\Auth\\AuthService\\AuthService.csproj",
         "projectName": "AuthService",
-        "projectPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Auth\\AuthService\\AuthService.csproj",
+        "projectPath": "C:\\ecommerce-telemetry-demo\\Auth\\AuthService\\AuthService.csproj",
         "packagesPath": "C:\\Users\\Luis Fernando\\.nuget\\packages\\",
-        "outputPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Auth\\AuthService\\obj\\",
+        "outputPath": "C:\\ecommerce-telemetry-demo\\Auth\\AuthService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Luis Fernando\\AppData\\Roaming\\NuGet\\NuGet.Config"

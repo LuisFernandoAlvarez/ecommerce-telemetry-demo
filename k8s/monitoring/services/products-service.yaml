@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: products-service
+  labels:
+    app: products
+    release: kube-prometheus
+spec:
+  selector:
+    app: products
+  ports:
+    - name: http-metrics
+      port: 8080
+      targetPort: 5257

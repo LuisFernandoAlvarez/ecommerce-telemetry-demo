@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: reviews-service
+  labels:
+    app: reviews
+    release: kube-prometheus
+spec:
+  selector:
+    app: reviews
+  ports:
+    - name: http-metrics
+      port: 8080
+      targetPort: 5146

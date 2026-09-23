@@ -1775,11 +1775,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Support\\SupportService\\SupportService.csproj",
+      "projectUniqueName": "C:\\ecommerce-telemetry-demo\\Support\\SupportService\\SupportService.csproj",
       "projectName": "SupportService",
-      "projectPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Support\\SupportService\\SupportService.csproj",
+      "projectPath": "C:\\ecommerce-telemetry-demo\\Support\\SupportService\\SupportService.csproj",
       "packagesPath": "C:\\Users\\Luis Fernando\\.nuget\\packages\\",
-      "outputPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Support\\SupportService\\obj\\",
+      "outputPath": "C:\\ecommerce-telemetry-demo\\Support\\SupportService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Luis Fernando\\AppData\\Roaming\\NuGet\\NuGet.Config"

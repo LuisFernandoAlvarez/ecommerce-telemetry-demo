@@ -1775,11 +1775,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Shipping\\ShippingService\\ShippingService.csproj",
+      "projectUniqueName": "C:\\ecommerce-telemetry-demo\\Shipping\\ShippingService\\ShippingService.csproj",
       "projectName": "ShippingService",
-      "projectPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Shipping\\ShippingService\\ShippingService.csproj",
+      "projectPath": "C:\\ecommerce-telemetry-demo\\Shipping\\ShippingService\\ShippingService.csproj",
       "packagesPath": "C:\\Users\\Luis Fernando\\.nuget\\packages\\",
-      "outputPath": "C:\\Maestria\\Herramientas Observabilidad\\Telemetry\\ecommerce-telemetry-demo\\Shipping\\ShippingService\\obj\\",
+      "outputPath": "C:\\ecommerce-telemetry-demo\\Shipping\\ShippingService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Luis Fernando\\AppData\\Roaming\\NuGet\\NuGet.Config"
